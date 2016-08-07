@@ -1,0 +1,48 @@
+.content {
+	width: 400px;
+	height: 350px;
+	background-color:#8ccb58; 
+	box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 25px;
+}
+h1 {
+	text-align: center;
+	color:#fff;
+}
+.box {
+	margin: 0 auto;
+	width: 250px;
+}
+.rating {
+	float: left;
+	padding-left:80px;
+}
+.rating label {
+	float:right;
+	cursor:pointer;
+	width:16px;
+	height: 16px;
+	white-space:nowrap;
+	text-indent: -9999px;
+	overflow:hidden;
+}
+.rating:not(:checked) > input {
+	position:absolute;
+	top:-9999px;
+	clip:rect(0,0,0,0); 
+}
+.rating:not(:checked) > label {
+	background: url('../img/rating-star.png') no-repeat 0 2px;
+}
+.rating > input:checked ~ label {
+	width: 16px;height: 16px;background: url('../img/rating-star.png') no-repeat 0 -14px;
+}
+.rating:not(:checked) > label:hover,
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label,
+.rating:not(:checked) > label:hover ~ label {
+	background: url('../img/rating-star.png') no-repeat 0 -14px;
+}
